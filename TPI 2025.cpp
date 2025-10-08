@@ -46,6 +46,11 @@ typedef struct{
 	
 } Persona;
 
+//void registrarGasto();
+//void registrarIngreso();  acá van los prototipos de las funciones
+//...
+//...
+
 int main(){
 	int opc,s=1, seguir;
 	while (s){
@@ -122,3 +127,4 @@ int main(){
 	}
 	return 0;
 }
+

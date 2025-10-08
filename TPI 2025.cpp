@@ -46,15 +46,16 @@ typedef struct{
 	
 } Persona;
 
-//void registrarGasto();
+void registrarGasto();
 //void registrarIngreso();  acá van los prototipos de las funciones
+//void registrarPago();
 //...
 //...
 
 int main(){
-	int opc,s=1, seguir;
+	int opc,s=1;
 	while (s){
-		seguir = 1;
+		system("cls");
 		printf("\n\nSistema de Gestion de Gastos Personales o Familiares\n--------MENU PRINCIPAL--------\n\n1. Registrar Gasto\n2. Registrar Ingreso\n3. Registrar Pago\n4. Listar Gastos e Ingresos\n5. Consultas y Reportes\n6. Salir\n\nElija una opcion: ");
 		fflush(stdin);
 		scanf("%d",&opc);
@@ -62,69 +63,91 @@ int main(){
 			case 1:
 				system("cls");
 				printf("---------\n1.REGISTRAR GASTO\n---------");
-				while(seguir){
-					//registrarGasto();
-					printf("\nDesea registrar otro gasto? (1 si, 0 no): \t");
-					fflush(stdin);
-					scanf("%d", &seguir);
-					while((seguir != 1) && (seguir != 0)){
-						printf("\nOpcion invalida. Intentelo de nuevo.\n");
-						printf("\nDesea registrar otro gasto? (1 si, 0 no): \t");
-						fflush(stdin);
-						scanf("%d", &seguir);
-					}
-				}
+				registrarGasto();
 				break;
 			case 2:
 				system("cls");
 				printf("---------\n2. REGISTRAR INGRESO\n---------");
-				while(seguir){
-					//registrarIngreso();
-					printf("\nDesea registrar otro ingreso? (1 si, 0 no): \t");
-					fflush(stdin);
-					scanf("%d", &seguir);
-					while((seguir != 1) && (seguir != 0)){
-						printf("\nOpcion invalida. Intentelo de nuevo.\n");
-						printf("\nDesea registrar otro ingreso? (1 si, 0 no): \t");
-						fflush(stdin);
-						scanf("%d", &seguir);
-					}
-				}
+			    //registrarIngreso();
 				break;
 			case 3:
 				system("cls");
 				printf("---------\n3. REGISTRAR PAGO\n---------");
-				while(seguir){
-					//registrarPago();
-					printf("\nDesea registrar otro pago? (1 si, 0 no): \t");
-					fflush(stdin);
-					scanf("%d", &seguir);
-					while((seguir != 1) && (seguir != 0)){
-						printf("\nOpcion invalida. Intentelo de nuevo.\n");
-						printf("\nDesea registrar otro pago? (1 si, 0 no): \t");
-						fflush(stdin);
-						scanf("%d", &seguir);
-					}
-				}
+				//registrarPago();
 				break;
 			case 4:
 				system("cls");
 				printf("---------\n4. LISTAR GASTOS E INGRESOS\n---------");
-				//Listar Gastos e Ingresos
+				//listarGastoseIngresos();
 				break;	
 			case 5:
 				system("cls");
 				printf("---------\n5. CONSULTAS Y REPORTES\n---------");
-				//Consultas y Reportes
+				//consultasyReportes();
 				break;	
 			case 6:
 				printf("\nSALIENDO .....\n\n");
 				s=0;
 				break;			
 			default:
-				printf("Ingrese un numero valido");
+				printf("\nIngrese un numero valido\n");
 		}
 	}
 	return 0;
 }
+
+void registrarGasto(){
+	int opc, s=1, seguir;
+	while(s){
+	    system("cls");
+		printf("\nEscoja el tipo de gasto a registrar:\n\n1. Gasto Fijo\n2. Gasto Ocasional\n3. Gasto Temporal\n4. Gasto Anual\n5. Volver al Menu Principal\n\nElija una opcion: ");
+		fflush(stdin);
+		scanf("%d",&opc);
+		switch(opc){
+			case 1:
+				//Gasto Fijo...
+				//¿registrarGastoFijo()?
+				break;
+			case 2:
+				//Gasto Ocasional...
+				//¿registrarGastoOcasional()?
+				break;	
+			case 3:
+				//Gasto Temporal...
+				//¿registrarGastoTemporal()?
+				break;
+			case 4:
+				//Gasto Anual..
+				////¿registrarGastoAnual()?
+				break;
+			case 5:	
+				printf("\nVOLVIENDO .....\n\n");
+				s=0;
+				break;	
+			default:
+				printf("\nIngrese un numero valido\n");			
+		}
+		
+		if(s){
+			if((opc >= 1) && (opc <= 5)){
+				system("cls");
+				printf("\nDesea registrar otro gasto? (1 si, 0 no): \t ");
+				fflush(stdin);
+				scanf("%d", &opc);
+				while((opc != 1) && (opc != 0)){
+					system("cls");
+					printf("\nOpcion invalida. Intentelo de nuevo.\n");
+					printf("\nDesea registrar otro gasto? (1 si, 0 no): \t ");
+					fflush(stdin);
+					scanf("%d", &opc);
+				}
+				if(!opc){
+					s = 0;
+				}
+			}
+		}
+		
+	}
+}
+
 

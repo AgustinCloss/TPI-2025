@@ -146,7 +146,7 @@ void registrarGasto(){
 		}
 		
 		if(s){
-			if((opc >= 1) && (opc <= 5)){
+			if((opc >= 1) && (opc <= 4)){
 				system("cls");
 				printf("\nDesea registrar otro gasto? (1 si, 0 no): \t ");
 				fflush(stdin);
@@ -210,7 +210,7 @@ void listarGastoseIngresos(){
 		}
 		
 		if(s){
-			if((opc >= 1) && (opc <= 5)){
+			if((opc >= 1) && (opc <= 3)){
 				system("cls");
 				printf("\nDesea realizar otro listado? (1 si, 0 no): \t ");
 				fflush(stdin);
@@ -311,7 +311,7 @@ void consultasyReportes(){
 		}
 		
 		if(s){
-			if((opc >= 1) && (opc <= 5)){
+			if((opc >= 1) && (opc <= 10)){
 				system("cls");
 				printf("\nDesea realizar otra consulta/reporte? (1 si, 0 no): \t ");
 				fflush(stdin);
@@ -336,5 +336,6 @@ void consultasyReportes(){
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
 
